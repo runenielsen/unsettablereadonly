@@ -75,7 +75,7 @@ components:
         ISBN: {type: string, pattern: "[0-9]{13}"}
         optionalReadOnly: {type: string, readOnly: true}
         requiredReadOnly: {type: string, readOnly: true}
-      required: ["name", "availability", "mandatoryReadOnly"]
+      required: ["name", "availability", "requiredReadOnly"]
     BookAvailability: # <4>
       type: string
       enum: ["available", "not available", "reserved"]
