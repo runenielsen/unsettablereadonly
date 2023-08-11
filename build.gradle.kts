@@ -52,8 +52,14 @@ micronaut {
     }
     openapi {
         server(file("src/main/resources/unsettablereadonly.yml")) {
-            apiPackageName = "com.example.openapi.api"
-            modelPackageName = "com.example.openapi.model"
+            apiPackageName = "com.example.openapi.server.api"
+            modelPackageName = "com.example.openapi.server.model"
+            useReactive = false
+        }
+
+        client(file("src/main/resources/unsettablereadonly.yml")) {
+            apiPackageName = "com.example.openapi.client.api"
+            modelPackageName = "com.example.openapi.client.model"
             useReactive = false
         }
     }

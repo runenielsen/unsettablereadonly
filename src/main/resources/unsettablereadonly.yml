@@ -37,7 +37,7 @@ paths:
           content:
             "application/json":
               schema:
-                type: array, 
+                type: array
                 items: 
                   $ref: "#/components/schemas/BookInfo"
         "400": # <8>
@@ -73,8 +73,9 @@ components:
         availability: {$ref: "#/components/schemas/BookAvailability"} # <3>
         author: {type: string, minLength: 3}
         ISBN: {type: string, pattern: "[0-9]{13}"}
-        unsettable: {type: string, readOnly: true}
-      required: ["name", "availability"]
+        optionalReadOnly: {type: string, readOnly: true}
+        requiredReadOnly: {type: string, readOnly: true}
+      required: ["name", "availability", "mandatoryReadOnly"]
     BookAvailability: # <4>
       type: string
       enum: ["available", "not available", "reserved"]
